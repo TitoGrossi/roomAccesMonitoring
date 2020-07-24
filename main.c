@@ -9,7 +9,7 @@
 
 int max_num_people 3;
 unsigned long max_time = 15000
-int limit_natural_light_laser = 50;
+int difference_natural_light_laser = 50;
 
 void setup() {
   pinMode(pin_outer_sensor_laser, OUTPUT);
@@ -25,7 +25,7 @@ void setup() {
 }
 
 bool get_change_in_sensor_state(int prev, int curr) {
-  if (abs(prev - curr) > 20)
+  if (abs(prev - curr) > difference_natural_light_laser)
     return true
   return false
 }
